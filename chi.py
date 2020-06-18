@@ -27,7 +27,7 @@ def get_arguments():
 
 def main():
     args = get_arguments()
-    n_cities, cities = read_csv(f"./google-step-tsp/input_{args.file_number}.csv")
+    n_cities, cities = read_csv(f"input_{args.file_number}.csv")
     path = graham_scan(n_cities, cities)
     plot_path(path, cities, f"./image/graham_scan{args.file_number}.png")
     cost, path = insert(path, cities)
@@ -40,11 +40,11 @@ def main():
 
     if cost1 < cost2:
         plot_path(swap_path, cities, f"./image/greedy_2opt_{args.file_number}.png")
-        save_path(f"./google-step-tsp/output_{args.file_number}.csv", swap_path)
+        save_path(f"solution_yours_{args.file_number}.csv", swap_path)
 
     elif cost2 <= cost1:
         plot_path(reverse_path, cities, f"./image/greedy_2opt_{args.file_number}.png")
-        save_path(f"./google-step-tsp/output_{args.file_number}.csv", reverse_path)
+        save_path(f"solution_yours_{args.file_number}.csv", reverse_path)
 
     # print(path)
 

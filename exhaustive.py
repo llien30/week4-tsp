@@ -19,12 +19,12 @@ def get_arguments():
 
 def main():
     args = get_arguments()
-    n_cities, cities = read_csv(f"./google-step-tsp/input_{args.file_number}.csv")
+    n_cities, cities = read_csv(f"input_{args.file_number}.csv")
 
     length, path = search_all_path(n_cities, cities)
     print(length)
     print(path)
-    save_path(f"./google-step-tsp/output_{args.file_number}.csv", path)
+    save_path(f"solution_yours_{args.file_number}.csv", path)
 
 
 if __name__ == "__main__":

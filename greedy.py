@@ -26,7 +26,7 @@ def get_arguments():
 
 def main():
     args = get_arguments()
-    n_cities, cities = read_csv(f"./google-step-tsp/input_{args.file_number}.csv")
+    n_cities, cities = read_csv(f"input_{args.file_number}.csv")
 
     cost, path = greedy_search(n_cities, cities)
     print(f"Greedy cost: {cost}")
@@ -43,10 +43,10 @@ def main():
     )
 
     if cost1 < cost2:
-        save_path(f"./google-step-tsp/output_{args.file_number}.csv", swap_path)
+        save_path(f"solution_yours_{args.file_number}.csv", swap_path)
 
     else:
-        save_path(f"./google-step-tsp/output_{args.file_number}.csv", reverse_path)
+        save_path(f"solution_yours_{args.file_number}.csv", reverse_path)
 
 
 if __name__ == "__main__":
